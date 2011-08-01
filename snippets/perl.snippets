@@ -95,3 +95,13 @@ snippet cl
 snippet slurp
 	my $${1:var};
 	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+# Personal standard templates for writing files
+snippet std
+	use v5.14.0;
+	use autodie;
+	use Method::Signatures;
+	use Try::Tiny;
+	use Rexp::DefaultFlags;
+	use List::AllUtils qw( :all );
+	use Data::Dumper;
+
