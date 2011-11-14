@@ -98,10 +98,31 @@ snippet slurp
 # Personal standard templates for writing files
 snippet std
 	use v5.14.0;
-	use autodie;
 	use Method::Signatures;
-	use Try::Tiny;
-	use Regexp::DefaultFlags;
+	use Data::Printer;
 	use List::AllUtils qw( :all );
+	use Log::Contextual::WarnLogger;
+	use Log::Contextual qw( :log ),
+		-default_logger => Log::Contextual::WarnLogger->new({
+			env_prefix => 'NET_SIMPLENOTE',
+		});
+
+snippet moose
+	package Net::Simplenote::Note;
+	use v5.14;
+	use Moose;
+	use Method::Signatures;
+	use namespace::autoclean;
+	use Const::Fast;
 	use Data::Dumper;
+	use DateTime;
+	use JSON;
+	use Log::Contextual::WarnLogger;
+		use Log::Contextual qw( :log ),
+		-default_logger => Log::Contextual::WarnLogger->new({
+			env_prefix => 'NET_SIMPLENOTE',
+		});
+	# Add class definition here
+	__PACKAGE__->meta->make_immutable;
+	1;
 
