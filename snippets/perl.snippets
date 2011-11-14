@@ -10,6 +10,11 @@ snippet sub
 	sub ${1:function_name} {
 		${2:#body ...}
 	}
+# Func for Method::Signatures
+snippet func
+	func ${1:function_name} {
+		${2:#body ...}
+	}
 # Conditional
 snippet if
 	if (${1}) {
@@ -106,7 +111,7 @@ snippet std
 		-default_logger => Log::Contextual::WarnLogger->new({
 			env_prefix => 'NET_SIMPLENOTE',
 		});
-
+# Personal standard template for Moose classes
 snippet moose
 	package Net::Simplenote::Note;
 	use v5.14;
@@ -125,4 +130,8 @@ snippet moose
 	# Add class definition here
 	__PACKAGE__->meta->make_immutable;
 	1;
-
+# Method for Method::Signatures
+snippet method
+	method ${1:function_name} {
+		${2:#body ...}
+	}
