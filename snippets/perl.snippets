@@ -104,6 +104,7 @@ snippet slurp
 snippet test-std
 	use v5.14;
 	use Test::More;
+	use Data::Printer;
 	done_testing();
 # Personal standard templates for writing files
 snippet std
@@ -124,7 +125,7 @@ snippet moose
 	use Method::Signatures;
 	use namespace::autoclean;
 	use Const::Fast;
-	use Data::Dumper;
+	use Data::Printer;
 	use DateTime;
 	use JSON;
 	use Log::Contextual::WarnLogger;
